@@ -4,7 +4,7 @@ from email.message import EmailMessage
 pin_code = '######'
 sender_email = 'sender@gmail.com'
 receiver_email = 'receiver@gmail.com'
-age_group = 18
+age_group = 18 #18 or 45
 
 def email_alert(subject,body,to):
     msg = EmailMessage()
