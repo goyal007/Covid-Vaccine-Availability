@@ -29,7 +29,7 @@ from datetime import date
 headers = {
     'accept': 'application/json',
     'Accept-Language': 'hi_IN',
-    'User-Agent': '', # Enter User-Agent from the network tab after clicking inspect element on the URL page
+    'User-Agent': '#############', # Enter User-Agent from the network tab after clicking inspect element on the URL page
 }
 params = (
     ('pincode', pin_code),
