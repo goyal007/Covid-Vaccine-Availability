@@ -20,7 +20,7 @@ def email_alert(subject,body,to):
     
     server = smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()
-    server.login(user,password)
+    server.login(sender_email,password)
     server.send_message(msg)
     server.quit()
     
@@ -33,7 +33,7 @@ headers = {
 }
 params = (
     ('pincode', pin_code),
-    ('date', date.today().strftime('%d-%m-%Y')),
+    ('date', str(date.today().strftime('%d-%m-%Y'))),
 )
 
 import time
@@ -49,11 +49,11 @@ while(1):
             t4 = a['centers'][i]['pincode']
             address = a['centers'][i]['address']
             name_vac = a['centers'][i]['sessions'][0]['vaccine']
-            '''print("Pincode:",t4)
+            print("Pincode:",t4)
             print("available_capacity: ",t1)
             print("min_age_limit: ",t2)
             print("date: ",t3)
-            print('\n\n')'''
+            print('\n\n')
             if(t1 > 0 and t2 == age_group):
                 body = str(t1)+" "+name_vac+" vaccine available at "+ address+ " for "+str(t2)+"+" 
                 email_alert("Vaccine Availability",body,receiver_email)
